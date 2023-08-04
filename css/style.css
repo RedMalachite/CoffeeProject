@@ -1,0 +1,141 @@
+:root {
+    --nav-bg-color: #140200;
+    --nav-tranparent-color: rgba(20, 2, 0, 0.8);
+    --theme-color: #b68834;
+    --dark-text-color: #222;
+    --light-text-color: #777;
+    --base-color: #fff;
+    --banner-text-color: #fff;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: var(--light-text-color);
+}
+
+/*NAVIGATION*/
+#nav-menu {
+    background-color: var(--nav-tranparent-color);
+    color: var(--base-color);
+}
+
+.nav-link {
+    color: var(--base-color);
+    font-size: 14px;
+}
+
+.nav-link:hover, #foot-info a {
+    color: var(--theme-color);
+    text-decoration: none;
+}
+
+/*END NAVIGATION*/
+
+/*BANNER*/
+.banner-font-small-size {
+    text-transform: uppercase;
+    font-size: 14px;
+}
+.banner-font-big-size{
+    line-height{70px;}
+}
+.banner-content {
+    margin: 7rem 0 30rem;
+    color: var(--banner-text-color);
+    font-weight: bold;
+    font-size: 50px;
+}
+
+#main-banner {
+    background: url(../img/header-bg.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.buy-button a {
+    text-decoration: none;
+    color: #000;
+}
+
+/*END BANNER*/
+
+/*VIDEO-CLIP*/
+#video-clip h6 {
+    color: var(--theme-color);
+}
+
+#video-clip h1 {
+    color: var(--dark-text-color);
+    font-weight: bold;
+}
+
+#video-clip .black-font {
+    color: var(--dark-text-color);
+}
+.video-right .overlay-bg {
+
+}
+.video-right{
+    background: url(../img/video-bg.jpg) no-repeat center;
+    background-size: cover;
+    height: 400px;
+}
+.video-left{
+    padding-left: 100px;
+}
+
+.video-right .overlay-bg {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.78);
+    height: 100%;
+    width: 100%;
+    border-radius: 30px;
+}
+.play-btn{position: relative;
+top: 45%;
+left: 45%}
+/*END VIDEO_CLIP*/
+
+/*FOOTER*/
+#foot-info {
+    background: url(../img/footer-bg.jpg) no-repeat center;
+    background-size: cover;
+    height: 500px;
+}
+
+#foot-info .foot-columns {
+    padding: 15rem 2rem 5rem;
+    color: var(--base-color);
+}
+
+.foot-titles {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.search {
+    height: 45px;
+    border: none;
+    width: 85%;
+}
+
+.search-button {
+    height: 45px;
+    width: 45px;
+    margin-left: -45px;
+    border: none;
+    background-color: var(--theme-color);
+    color: #fff;
+}
+
+.social a {
+    margin-right: 15px;
+}
+.social a i {
+    color: #fff;
+}
+.social a i:hover, .fa.fa-heart-o{
+    color: var(--theme-color);
+}
+
+/*END FOOTER*/
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
