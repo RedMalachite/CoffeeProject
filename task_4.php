@@ -1,5 +1,4 @@
 <?php
-
 $colors = array(
     array(
         'color' => 'black',
@@ -85,3 +84,6 @@ $colors = array(
         ),
     ),
 );
+
+$hueCategory = array();
+$valueCategory = array();
