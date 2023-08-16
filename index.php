@@ -1,6 +1,6 @@
 <?php
 echo 'ДЗ з прізвищем <br><br>';
-$last_name = "BondarenkoAndri";
+$last_name = "BondarenkoAndriy";
 $length_name = strlen($last_name);
 const SMALL_SURNAME = 5;
 const MEDIUM_SURNAME = 10;
