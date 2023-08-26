@@ -1,6 +1,11 @@
 <?php
- $number = 100;
-function num ($num2){
-    return $num2;
+
+
+//$y = 1;
+//$fn1 = fn($x) => $x + $y;
+//echo $fn1(3);
+
+function test (int $x): int{
+  return $x++;
 }
-echo num ($number) . "<br>" . var_dump($number);
+echo test(11);
