@@ -17,6 +17,3 @@ function dbSelect(Tables $table, string $columns = '*', string $condition = null
 
     return $result ?? [];
 };
-dd(
-    dbSelect(Tables::Content, condition: 'id = 3', isSingle: false)
-);
