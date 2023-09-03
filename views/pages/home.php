@@ -3,7 +3,7 @@ require PARTS_DIR . 'header.php';
 
 $content = getContent('name IN ("main_banner", "about_us", "catalog", "gallery")');
 extract($content);
-//dd($main_banner);
+
 require PARTS_DIR . 'home/banner.php';
 require PARTS_DIR . 'home/video-clip.php';
 require PARTS_DIR . 'home/coffee-price.php';
