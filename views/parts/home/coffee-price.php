@@ -1,8 +1,8 @@
 <section id="coffee-price">
     <div class="container">
         <div class="in-center pt-5">
-            <h1><?= $content['catalog']['title'] ?? $empty ?></h1>
-            <p><?= $content['catalog']['description'] ?? $empty ?></p>
+            <h1>What kind of Coffee we serve for you</h1>
+            <p>Who are in extremely love with eco friendly system.</p>
         </div>
         <div class="row mt-5">
             <div class="col-sm-12 col-lg-4">
