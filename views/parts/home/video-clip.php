@@ -4,16 +4,20 @@
             <div class="col-lg-6 video-right justify-content-center align-items-center d-flex rounded-5">
                 <div class="overlay overlay-bg">
                     <a class="play-btn" href="https://www.youtube.com/watch?v=ARA0AxrnHdM"><img class="img-fluid"
-                                                                                                src="img/<?= $content['about_us']['video']['play-img'] ?? '' ?>"
+                                                                                                src="img/play-icon.png"
                                                                                                 alt=""></a>
                 </div>
             </div>
             <div class="col-lg-6 video-left">
-                <h6><?= $content['about_us']['text']['title'] ?? $empty ?></h6>
-                <h1><?= $content['about_us']['text']['subtitle'] ?? $empty ?></h1>
-                <p class="black-font"><?= $content['about_us']['text']['quote'] ?? $empty ?></p>
-                <p><?= $content['about_us']['text']['description'] ?? $empty ?></p>
-                <img class="img-fluid" src="img/<?= $content['about_us']['text']['img'] ?? '' ?>" alt="Lava Craft Signature">
+                <h6>Live Coffee making process.</h6>
+                <h1>We Telecast our <br>
+                    Coffee Making Live</h1>
+                <p class="black-font">We are here to listen from you deliver exellence</p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do<br>eiusmod temp or incididunt ut
+                    labore et dolore magna aliqua.<br>Ut enim ad minim.
+                </p>
+                <img class="img-fluid" src="img/signature.png" alt="Lava Craft Signature">
             </div>
         </div>
     </div>
