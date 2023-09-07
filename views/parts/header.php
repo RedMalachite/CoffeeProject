@@ -32,6 +32,15 @@ $empty = "<span style='color: darkred'>Value not found</span>";
                                     <a href="<?= $link['href'] ?>" class="nav-link" aria-current="page"><?= $link['title'] ?? $empty ?></a>
                                 </li>
                             <?php endforeach; ?>
+                            <li class="nav-item">
+                                <a href="/login" class="nav-link" aria-current="page">Sign In</a>
+                            </li>
+                            <li class="nav-item">
+                                <span class="nav-link disabled" style="color: #fff">|</span>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/register" class="nav-link" aria-current="page">Sign Up</a>
+                            </li>
                         </ul>
                     <?php endif; ?>
                 </header>
