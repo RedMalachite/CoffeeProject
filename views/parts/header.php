@@ -13,6 +13,9 @@
 $socials = $commonBlocks['socials'] ?? [];
 $empty = "<span style='color: darkred'>Value not found</span>";
 ?>
+<?php
+include_once PARTS_DIR . 'notification.php';
+?>
 <section id="nav-menu" class="fixed-top">
     <div class="container">
         <div class="row">
@@ -21,26 +24,45 @@ $empty = "<span style='color: darkred'>Value not found</span>";
                     <?php if ($commonBlocks['navigation']['logo']): ?>
                         <a href="/"
                            class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                            <img src="<?php BASE_DIR ?>img/<?= $commonBlocks['navigation']['logo'] ?>"
-                                 alt="Coffee Logo">
+                            <img src="<?= IMAGES_URI ?>/<?= $commonBlocks['navigation']['logo'] ?>" alt="Logo">
                         </a>
                     <?php endif; ?>
+
                     <?php if ($commonBlocks['navigation']['links']): ?>
                         <ul class="nav nav-pills">
                             <?php foreach ($commonBlocks['navigation']['links'] as $link): ?>
                                 <li class="nav-item">
-                                    <a href="<?= $link['href'] ?>" class="nav-link" aria-current="page"><?= $link['title'] ?? $empty ?></a>
+                                    <a href="<?= $link['href'] ?>" class="nav-link"
+                                       aria-current="page"><?= $link['title'] ?></a>
                                 </li>
                             <?php endforeach; ?>
-                            <li class="nav-item">
-                                <a href="/login" class="nav-link" aria-current="page">Sign In</a>
-                            </li>
-                            <li class="nav-item">
-                                <span class="nav-link disabled" style="color: #fff">|</span>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/register" class="nav-link" aria-current="page">Sign Up</a>
-                            </li>
+
+                            <?php if (!isAuth()): ?>
+                                <li class="nav-item">
+                                    <a href="/login" class="nav-link" aria-current="page">Sign In</a>
+                                </li>
+                                <li class="nav-item">
+                                    <span class="nav-link disabled">|</span>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/register" class="nav-link" aria-current="page">Sign Up</a>
+                                </li>
+                            <?php else: ?>
+                                <li class="nav-item">
+                                    <span class="nav-link disabled">|</span>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">User Actions</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="/account">Account</a></li>
+                                        <?php if (isAdmin()): ?>
+                                            <li><a href="/admin/dashboard" class="dropdown-item">Admin panel</a></li>
+                                        <?php endif; ?>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="/logout">Log Out</a></li>
+                                    </ul>
+                                </li>
+                            <?php endif; ?>
                         </ul>
                     <?php endif; ?>
                 </header>

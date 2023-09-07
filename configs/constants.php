@@ -8,6 +8,9 @@ const DNS = 'mysql:host=' . DB_HOST . ';dbname=' . DATABASE;
 
 const VIEW_DIR = BASE_DIR . '/views/';
 const PAGE_DIR = VIEW_DIR . 'pages/';
+
+const ADMIN_PAGE_DIR = PAGE_DIR . '/admin';
+const ADMIN_PARTS_DIR = ADMIN_PAGE_DIR . '/parts';
 const PARTS_DIR = VIEW_DIR . 'parts/';
 
 const APP_DIR = BASE_DIR . '/app/';
@@ -27,6 +30,8 @@ enum Tables: string{
 }
 enum SESSION_KEYS: string{
     case REGISTER = 'registration';
+    case LOGIN = 'login';
+    case CREATE_PRODUCT = 'create_product';
 }
 
 

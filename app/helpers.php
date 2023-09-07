@@ -41,6 +41,13 @@ function redirectBack(): void
     exit;
 }
 
+function conditionRedirect(bool $condition = false, string $path = '/'): void
+{
+    if ($condition) {
+        redirect($path);
+    }
+}
+
 function emptyFields(array $fields, SESSION_KEYS $key): bool
 {
     $result = false;
@@ -61,3 +68,4 @@ function formError(string|null $message = null): string
     $template = '<div class="mb-3 d-flex"><span class="alert alert-danger w-100 mt-1 mb-0 pb-1 pt-1" role="alert">%s</span></div>';
     return $message ? sprintf($template, $message) : '';
 }
+
