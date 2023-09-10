@@ -35,3 +35,4 @@ function authUserParams (): array{
 
     return filter_input_array(INPUT_POST, $options);
 }
+

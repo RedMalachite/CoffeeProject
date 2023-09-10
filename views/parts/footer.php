@@ -41,7 +41,14 @@ $socials = $commonBlocks['socials'] ?? [];
         </div>
     </div>
 </section>
-<?php //dd($commonBlocks['socials']) ?>
-<script src="<?php BASE_DIR ?>bootstrap/js/bootstrap.bundle.min.js"></script>
+<?php include_once 'views/parts/modals/buy_product.php' ?>
+<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script type="application/javascript" src="/assets/js/script.js"></script>
+<script type="application/javascript" src="/assets/js/buy_product.js"></script>
+<script>if (window.jQuery) {
+        console.log('Y')
+    } else {
+        console.log('N')
+    }</script>
 </body>
 </html>

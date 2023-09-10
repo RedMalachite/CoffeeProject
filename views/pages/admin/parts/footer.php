@@ -1,4 +1,4 @@
-<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!--<script type="application/javascript" src="--><?php //= ASSETS_URI ?><!--/js/admin.js"></script>-->
+<script type="application/javascript" src="/assets/js/script.js"></script>
+<script src="<?php BASE_DIR ?>/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

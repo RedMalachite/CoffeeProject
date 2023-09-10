@@ -18,8 +18,8 @@
                     <input type="hidden" name="type" value="remove_product" />
                     <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
                     <div class="btn-group">
-                        <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
-                        <a href="/admin/products/edit/<?= $product['id'] ?>" class="btn btn-info"><i class="fa-solid fa-marker"></i></a>
+                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                        <a href="/admin/products/edit/<?= $product['id'] ?>" class="btn btn-primary"><i class="fa fa-magic"></i></a>
                     </div>
                 </form>
             </td>

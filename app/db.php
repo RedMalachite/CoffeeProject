@@ -1,8 +1,6 @@
 <?php
 
 
-
-
 function dbSelect(Tables $table, string $columns = '*', string $condition = null, string $order = null, bool $isSingle = false): array
 {
     $sql = "SELECT {$columns} FROM {$table -> value}";
@@ -11,9 +9,16 @@ function dbSelect(Tables $table, string $columns = '*', string $condition = null
 
 
     $query = DB::connect()->prepare($sql);
-    $query -> execute();
+    $query->execute();
 
     $result = $isSingle ? $query->fetch() : $query->fetchAll();
 
     return $result ?: [];
-};
+}
+
+;
+
+function dbFind(Tables $tables, int $id): array
+{
+return dbSelect($tables, condition: "id = $id", isSingle: true);
+}
