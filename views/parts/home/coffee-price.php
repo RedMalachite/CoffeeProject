@@ -13,7 +13,9 @@ if (!empty($products)) {
         <?php foreach ($products as $row): ?>
             <div class="row mt-5">
                 <?php foreach ($row as $product): ?>
-                    <div class="col-sm-12 col-lg-4 test" data-bs-toggle="modal" data-bs-target="#buyProduct"
+                    <div class="col-sm-12 col-lg-4 drinks"
+                         data-bs-toggle="modal"
+                         data-bs-target="#buyProduct"
                          data-id="<?= $product['id'] ?>"
                          data-qty="<?= $product['quantity'] ?>"
                          data-name="<?= $product['name'] ?>"

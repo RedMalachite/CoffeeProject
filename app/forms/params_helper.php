@@ -23,7 +23,6 @@ function createUserParams (): array{
     return filter_input_array(INPUT_POST, $options);
 }
 
-
 function authUserParams (): array{
     $options = [
         'email' => FILTER_VALIDATE_EMAIL,
@@ -36,3 +35,19 @@ function authUserParams (): array{
     return filter_input_array(INPUT_POST, $options);
 }
 
+function addToCartParams(): array{
+    $options =[
+        'product_id' => FILTER_VALIDATE_INT,
+        'quantity' => FILTER_VALIDATE_INT,
+        'additions' => [
+            'flags' => FILTER_REQUIRE_ARRAY,
+            'filter' => FILTER_VALIDATE_INT
+        ],
+        'additions_qty' => [
+            'flags' => FILTER_REQUIRE_ARRAY,
+            'filter' => FILTER_VALIDATE_INT
+        ]
+    ];
+    dd(filter_input_array(INPUT_POST, $options));
+    return filter_input_array(INPUT_POST, $options);
+}

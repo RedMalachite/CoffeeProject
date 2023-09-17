@@ -44,11 +44,8 @@ $socials = $commonBlocks['socials'] ?? [];
 <?php include_once 'views/parts/modals/buy_product.php' ?>
 <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script type="application/javascript" src="/assets/js/script.js"></script>
-<script type="application/javascript" src="/assets/js/buy_product.js"></script>
-<script>if (window.jQuery) {
-        console.log('Y')
-    } else {
-        console.log('N')
-    }</script>
+<script type="application/javascript" src="/assets/js/buy_product11.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </body>
 </html>

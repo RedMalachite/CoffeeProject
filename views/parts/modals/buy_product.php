@@ -4,9 +4,10 @@
         <div class="modal-content">
             <form action="/" method="POST" id="buy-form">
                 <input type="hidden" name="type" value="add_to_cart">
-                <input type="hidden" name="product_id" id="productIdField">
+                <input type="hidden" name="product_id" id="productIdField"/> <!-- Put value via JS -->
+
                 <div class="modal-header">
-                    <h5 class="modal-title">Buy drink </h5>
+                    <h5 class="modal-title">Buy product</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -49,6 +50,7 @@
                                                class="form-control additional-qty additional-qty-<?= $addition['id'] ?>"
                                                name="additions_qty[]"
                                                max="<?= $addition['quantity'] ?>"
+                                               disabled
                                         />
                                         <span class="input-group-text additional-total"></span>
                                     </div>
