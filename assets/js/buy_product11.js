@@ -31,7 +31,7 @@ $(document).on('click', '.drinks', function () {
 
     $qtyProductField.val(1)
     $qtyProductField.attr('max', itemData.qty)
-    $form.find(selectors.modal.product).val(itemData.id)
+    $form.find(selectors.modal.productId).val(itemData.id)
     $form.find(selectors.modal.product.name).html(itemData.name)
     $form.find(selectors.modal.product.price).html(renderPrice(itemData.price))
     $form.find(selectors.modal.product.total).html(renderPrice(itemData.price))

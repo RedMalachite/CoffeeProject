@@ -48,6 +48,6 @@ function addToCartParams(): array{
             'filter' => FILTER_VALIDATE_INT
         ]
     ];
-    dd(filter_input_array(INPUT_POST, $options));
+//    dd(filter_input_array(INPUT_POST, $options));
     return filter_input_array(INPUT_POST, $options);
 }
