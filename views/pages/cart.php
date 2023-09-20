@@ -37,7 +37,7 @@ $cart = getCartItems();
                                             <input type="hidden" name="type" value="remove_cart_item">
                                             <input type="hidden" name="product_key" value="<?= $number ?>">
                                             <button type="submit" class="btn btn-outline-danger"><i
-                                                    class="fa fa-trash"></i></button>
+                                                        class="fa fa-trash"></i></button>
                                         </form>
                                     </td>
                                 </tr>
@@ -55,7 +55,7 @@ $cart = getCartItems();
                                                 <input type="hidden" name="product_key" value="<?= $subNumber ?>">
                                                 <input type="hidden" name="parent_key" value="<?= $number ?>">
                                                 <button type="submit" class="btn btn-outline-danger"><i
-                                                        class="fa fa-trash"></i></button>
+                                                            class="fa fa-trash"></i></button>
                                             </form>
                                         </td>
                                     </tr>
@@ -69,7 +69,7 @@ $cart = getCartItems();
                         <div class="text-center w-100">
                             <?php if (isAuth()): ?>
                                 <form action="/" method="POST">
-                                    <input type="hidden" name="type" value="create_order" />
+                                    <input type="hidden" name="type" value="create_order"/>
                                     <button type="submit" class="btn btn-success">Create order</button>
                                 </form>
                             <?php else: ?>

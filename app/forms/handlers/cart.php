@@ -59,7 +59,7 @@ function calcTotal($cart): float
 {
     $total = 0;
     foreach ($cart as $cartItem) {
-        if(!empty($cartItem['additions']) && is_array($cartItem['additions'])){
+        if (!empty($cartItem['additions']) && is_array($cartItem['additions'])) {
             $cartItem['total'] += calcTotal($cartItem['additions']);
         }
         $total += $cartItem['total'];
@@ -132,4 +132,40 @@ function mapCartIds(array $cart): array
     );
 
     return array_unique($result);
+}
+
+function updateCart(array $items)
+{
+    setcookie(
+        'cart',
+        json_encode(array_values($items)),
+        time() + (60 * 60 * 24 * 10)
+    );
+}
+
+function removeCartItem(array $fields)
+{
+    $cart = retrieveCartFromCookie();
+
+    if (isset($fields['parent_key'])) {
+        extract($fields);
+
+        unset($cart[$parent_key]['additions'][$product_key]);
+        unset($cart[$parent_key]['additions_qty'][$product_key]);
+
+        if (!empty($cart[$parent_key]['additions'])) {
+        $cart[$parent_key]['additions'] = array_values($cart[$parent_key]['additions']);
+        $cart[$parent_key]['additions_qty'] = array_values($cart[$parent_key]['additions_qty']);
+        }else{
+            $item = $cart[$parent_key];
+            unset($cart[$parent_key]);
+            $cart = addOrCombineProduct(array_values($cart), $item);
+        }
+    } else {
+        unset($cart[$fields['product_key']]);
+    }
+
+    updateCart($cart);
+    notify('Product was removed from cart');
+    redirectBack();
 }
