@@ -20,5 +20,5 @@ function dbSelect(Tables $table, string $columns = '*', string $condition = null
 
 function dbFind(Tables $tables, int $id): array
 {
-return dbSelect($tables, condition: "id = $id", isSingle: true);
+    return dbSelect($tables, condition: "id = $id", isSingle: true);
 }

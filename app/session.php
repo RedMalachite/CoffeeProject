@@ -43,8 +43,8 @@ function isAdmin(): bool
     return isAuth() ? $_SESSION['user']['isAdmin'] : false;
 }
 
-function userId(): bool{
-    return $_SESSION['user']['id'];
+function userId(): int{
+        return $_SESSION['user']['id'];
 }
 
 function notify(string $text, string $class = 'success'){

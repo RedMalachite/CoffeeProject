@@ -13,13 +13,12 @@ function createOrder()
         setProductsToOrder($oderId, $cart);
 
         DB::connect()->commit();
-
         updateCart([]);
-
         notify('Your order was created');
         redirect('/cart');
 
     } catch (PDOException|Exception $exception) {
+//        dd('exc order.php 25 string');
         DB::connect()->rollBack();
         notify($exception->getMessage(), 'danger');
         redirectBack();
@@ -66,7 +65,6 @@ function minusProductQty(int $id, int $quantity): void
 function updateUserBalance(int $userId, float $total): void
 {
     $user = dbFind(Tables::Users, $userId);
-
     dd($user);
 
     if ($user['balance'] < $total) {
@@ -74,6 +72,8 @@ function updateUserBalance(int $userId, float $total): void
     }
 
     $sql = "UPDATE " . Tables::Users->value . " SET balance = balance - :total WHERE id = :id";
+
+//    dd($sql);
 
     $query = DB::connect()->prepare($sql);
 
