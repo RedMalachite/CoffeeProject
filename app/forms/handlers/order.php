@@ -8,8 +8,8 @@ function createOrder()
 
     try {
         DB::connect()->beginTransaction();
-        updateUserBalance(userId(), $total);
-        $oderId = insertOrder(userId(), $total);
+        updateUserBalance(userIdInt(), $total);
+        $oderId = insertOrder(userIdInt(), $total);
         setProductsToOrder($oderId, $cart);
 
         DB::connect()->commit();
@@ -18,8 +18,8 @@ function createOrder()
         redirect('/cart');
 
     } catch (PDOException|Exception $exception) {
-//        dd('exc order.php 25 string');
         DB::connect()->rollBack();
+        dd($exception->getMessage(), $exception->getFile(), $exception->getLine());
         notify($exception->getMessage(), 'danger');
         redirectBack();
     }
@@ -27,7 +27,7 @@ function createOrder()
 
 function setProductsToOrder(int $orderId, array $cart): void
 {
-    $sql = "INSERT INTO " . Tables::Orders->value . " (order_id, product_id, quantity, single_price, additions) VALUES (:order_id, :product_id, :quantity, :single_price, :additions)";
+    $sql = "INSERT INTO " . Tables::OrderProducts->value . " (order_id, product_id, quantity, single_price, additions) VALUES (:order_id, :product_id, :quantity, :single_price, :additions)";
     $query = DB::connect()->prepare($sql);
 
     foreach ($cart as $item) {
@@ -65,22 +65,19 @@ function minusProductQty(int $id, int $quantity): void
 function updateUserBalance(int $userId, float $total): void
 {
     $user = dbFind(Tables::Users, $userId);
-    dd($user);
 
     if ($user['balance'] < $total) {
         throw new Exception('Not enough money on your balance');
     }
 
-    $sql = "UPDATE " . Tables::Users->value . " SET balance = balance - :total WHERE id = :id";
-
-//    dd($sql);
+    $sql = "UPDATE " . Tables::Users->value . " SET balance = balance - :total WHERE id = :idgit ";
 
     $query = DB::connect()->prepare($sql);
-
-    $query->bindParam('user_id', $userId, PDO::PARAM_INT);
+    $query->bindParam('id', $userId, PDO::PARAM_INT);
     $query->bindParam('total', $total);
 
     $query->execute();
+
 }
 
 function insertOrder(int $userId, float $total): int

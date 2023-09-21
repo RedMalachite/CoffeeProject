@@ -6,6 +6,7 @@ function createUserHandler(array $fields): void
     createUserValidation($fields);
 
     $sql = "INSERT INTO " . Tables::Users->value . " (name, surname, email, password) VALUES (:first_name, :second_name, :email, :password)";
+//    dd($sql);
     $query = DB::connect()->prepare($sql);
 
     $fields['password'] = password_hash($fields['password'], PASSWORD_BCRYPT);
