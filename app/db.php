@@ -22,3 +22,15 @@ function dbFind(Tables $tables, int $id): array
 {
     return dbSelect($tables, condition: "id = $id", isSingle: true);
 }
+
+function getOrderInfo(int $orderId): array|bool{
+    $sql = "SELECT p.id, p.name, p.description, op.quantity, op.single_price, op.additions FROM ". Tables::OrderProducts->value ." op LEFT JOIN ". Tables::Products->value ." p ON op.product_id = p.id WHERE op.order_id = :order_id";
+
+    $query = DB::connect()->prepare($sql);
+
+    $query->bindParam('order_id', $orderId, PDO::PARAM_INT);
+
+    $query->execute();
+
+    return $query->fetchAll();
+}

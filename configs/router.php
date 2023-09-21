@@ -44,6 +44,30 @@ switch (getUrl()) {
 
         require ADMIN_PAGE_DIR . '/products/edit.php';
         break;
+
+    case 'account':
+        conditionRedirect(!isAuth());
+        require 'views/pages/account/dashboard.php';
+        break;
+    case 'account/orders':
+        conditionRedirect(!isAuth());
+        $userId = userIdInt();
+        $orders = dbSelect(Tables::Orders, condition: "user_id = $userId");
+        require 'views/pages/account/orders/index.php';
+        break;
+    case (bool)preg_match('/account\/orders\/(\d+)/', getUrl(), $match):
+        conditionRedirect(!isAuth());
+
+        $id = end($match);
+        $order = dbFind(Tables::Orders, $id);
+
+        conditionRedirect(!$order, 'account/orders');
+
+        $products = getOrderInfo($id);
+
+        require 'views/pages/account/orders/show.php';
+
+        break;
     default:
         throw new Exception(getUrl() . ' does not exists', 404);
 }

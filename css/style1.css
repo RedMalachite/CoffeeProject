@@ -1,0 +1,297 @@
+:root {
+    --nav-bg-color: #140200;
+    --nav-tranparent-color: rgba(20, 2, 0, 0.8);
+    --theme-color: #b68834;
+    --dark-text-color: #222;
+    --light-text-color: #777;
+    --base-color: #fff;
+    --banner-text-color: #fff;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: var(--light-text-color);
+}
+
+.notification{
+    position: absolute;
+    top: 13%;
+    right: 1%;
+    padding: 0.5rem 1rem;
+}
+
+/*NAVIGATION*/
+#navigation .container{
+    background-color: var(--nav-tranparent-color);
+    color: var(--base-color);
+    color: red;
+}
+
+.nav-link {
+    color: var(--base-color);
+    font-size: 14px;
+}
+
+.nav:hover, #foot-info a {
+    color: var(--theme-color);
+    text-decoration: none;
+}
+
+/*END NAVIGATION*/
+
+/*BANNER*/
+#main-banner .banner-font-small-size {
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.banner-font-big-size {
+    line-height: 70px;
+}
+
+.banner-content {
+    margin: 7rem 0 30rem;
+    color: var(--banner-text-color);
+    font-weight: bold;
+    font-size: 50px;
+}
+
+#main-banner {
+    background: url(../img/header-bg.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.buy-button a {
+    text-decoration: none;
+    color: #000;
+}
+
+/*END BANNER*/
+
+/*VIDEO-CLIP*/
+#video-clip h6 {
+    color: var(--theme-color);
+}
+
+#video-clip h1 {
+    color: var(--dark-text-color);
+    font-weight: bold;
+}
+
+#video-clip .black-font {
+    color: var(--dark-text-color);
+}
+
+.video-right .overlay-bg {
+
+}
+
+.video-right {
+    background: url(../img/video-bg.jpg) no-repeat center;
+    background-size: cover;
+    height: 400px;
+}
+
+.video-left {
+    padding-left: 100px;
+}
+
+.video-right .overlay-bg {
+    background-color: rgba(0, 0, 0, 0.78);
+    height: 100%;
+    width: 100%;
+    border-radius: 30px;
+}
+
+.play-btn {
+    position: relative;
+    top: 45%;
+    left: 45%
+}
+
+/*END VIDEO_CLIP*/
+
+/*COFFEE PRICE*/
+#coffee-price {
+    background: url(../img/menu-bg.jpg) no-repeat center;
+    background-size: cover;
+}
+
+#coffee-price .in-center {
+    text-align: center;
+}
+
+#coffee-price h1 {
+    color: var(--dark-text-color);
+}
+
+#coffee-price .shadow-box {
+    background-color: var(--base-color);
+    box-shadow: 0 0 30px rgba(255, 218, 185, 0.5);
+    cursor: pointer;
+}
+
+#coffee-price .shadow-box:hover {
+    background-color: var(--base-color);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+#coffee-price .coffee-name {
+    color: var(--dark-text-color);
+    font-weight: bold;
+}
+
+#coffee-price .price {
+    color: var(--theme-color);
+    font-weight: bold;
+}
+
+#coffee-price .pads-b {
+    padding-bottom: 100px;
+}
+
+@media screen and (max-width: 991px) {
+    #coffee-price .mobile-paddings {
+        margin-top: 50px;
+    }
+}
+
+/*END COFFEE PRICE*/
+
+/*PICTURES*/
+#pictures .first-col img, #pictures .second-col img {
+    width: 100%;
+}
+
+#pictures .in-center {
+    text-align: center;
+}
+
+#pictures h1 {
+    color: var(--dark-text-color);
+}
+
+@media screen and (max-width: 991px) {
+    #pictures .mobile-paddings {
+        margin-top: 25px;
+    }
+}
+
+/*END PICTURES*/
+#reviews {
+    background-color: var(--theme-color);
+}
+
+#reviews .in-center {
+    text-align: center;
+    color: var(--base-color);
+}
+
+/*REVIEWS*/
+#reviews {
+    color: var(--base-color);
+}
+
+#reviews .buyer {
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.color-star {
+    color: orange;
+}
+
+#reviews .count {
+    font-size: 50px;
+    font-weight: lighter;
+}
+
+/*END REVIEWS*/
+
+/*BLOG*/
+#blog .in-center {
+    text-align: center;
+    color: var(--dark-text-color);
+}
+
+#blog .blog-button {
+    border: 1px solid lightgray;
+    font-size: 11px;
+}
+
+#blog .link a {
+    color: var(--dark-text-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#blog .date {
+    color: var(--dark-text-color);
+    font-weight: 500;
+}
+
+#blog img {
+    width: 100%;
+}
+
+#blog .container {
+    margin-bottom: 100px;
+}
+
+/*END BLOG*/
+
+/*FOOTER*/
+#foot-info {
+    background: url(../img/footer-bg.jpg) no-repeat center;
+    background-size: cover;
+    height: 500px;
+}
+
+#foot-info .foot-columns {
+    padding: 15rem 2rem 5rem;
+    color: var(--base-color);
+}
+
+.foot-titles {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.search {
+    height: 45px;
+    border: none;
+    width: 85%;
+}
+
+.search-button {
+    height: 45px;
+    width: 45px;
+    margin-left: -45px;
+    border: none;
+    background-color: var(--theme-color);
+    color: #fff;
+}
+
+.social a {
+    margin-right: 15px;
+}
+
+.social a i {
+    color: #fff;
+}
+
+.social a i:hover, .fa.fa-heart-o {
+    color: var(--theme-color);
+}
+
+/*END FOOTER*/
+
+/*.account-body header .container{*/
+/*    height: 100vh;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: stretch;*/
+/*    justify-content: space-between;*/
+/*}*/
+
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
