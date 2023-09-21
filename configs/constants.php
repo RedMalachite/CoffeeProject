@@ -33,6 +33,8 @@ enum SESSION_KEYS: string{
     case LOGIN = 'login';
     case CREATE_PRODUCT = 'create_product';
     case EDIT_PRODUCT = 'edit_product';
+    case UPDATE_USER = 'update_user_info';
+//    case UPDATE_USER_PASS = 'update_user_password';
 }
 
 

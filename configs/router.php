@@ -47,6 +47,9 @@ switch (getUrl()) {
 
     case 'account':
         conditionRedirect(!isAuth());
+
+        $user = dbFind(Tables::Users, userIdInt());
+
         require 'views/pages/account/dashboard.php';
         break;
     case 'account/orders':
