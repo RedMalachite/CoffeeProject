@@ -70,7 +70,7 @@ function updateUserBalance(int $userId, float $total): void
         throw new Exception('Not enough money on your balance');
     }
 
-    $sql = "UPDATE " . Tables::Users->value . " SET balance = balance - :total WHERE id = :idgit ";
+    $sql = "UPDATE " . Tables::Users->value . " SET balance = balance - :total WHERE id = :id";
 
     $query = DB::connect()->prepare($sql);
     $query->bindParam('id', $userId, PDO::PARAM_INT);
