@@ -19,7 +19,7 @@ function createOrder()
 
     } catch (PDOException|Exception $exception) {
         DB::connect()->rollBack();
-        dd($exception->getMessage(), $exception->getFile(), $exception->getLine());
+//        dd($exception->getMessage(), $exception->getFile(), $exception->getLine());
         notify($exception->getMessage(), 'danger');
         redirectBack();
     }
