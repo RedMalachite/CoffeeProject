@@ -1,6 +1,7 @@
 <?php
 require_once ADMIN_PARTS_DIR . '/header.php';
 $fields = json_decode($block['content'], true);
+//dd($fields);
 ?>
 
     <div class="container" style="padding-top: 10em;">
@@ -20,11 +21,44 @@ $fields = json_decode($block['content'], true);
                                     ?>
                                     <div class="mt-3">
                                         <p>Current logo:</p>
-                                        <img src="/img/<?= $fields['logo'] ?>" alt="">
+                                        <img class="img-thumbnail" src="/img/<?= $fields['logo'] ?>" alt="">
                                     </div>
                                 <?php endif; ?>
                                 <div class="mt-3">
-
+                                    <label for="logo">Upload new logo</label>
+                                    <input type="file" class="form-control" name="Logo">
+                                </div>
+                                <div class="mt-3">
+                                    <h5>Nav links:</h5>
+                                    <?php if (!empty($fields['links'])): ?>
+                                        <?php
+                                        foreach ($fields['links'] as $key => $link):
+                                            ?>
+                                            <div class="row d-flex align-items-center" style="border: 1px solid #000;border-radius: 15px">
+                                                <div class="col-11 mb-3">
+                                                    <label for="link_text_<?= $key ?>">Title</label>
+                                                    <input type="text"
+                                                           class="form-control"
+                                                           id="link-text_<?= $key ?>"
+                                                           value="<?= $link['title'] ?>"
+                                                    >
+                                                    <label for="link_<?= $key ?>">Link</label>
+                                                    <input type="text"
+                                                           class="form-control"
+                                                           id="link_<?= $key ?>"
+                                                           value="<?= $link['href'] ?>"
+                                                    >
+                                                </div>
+                                                <div class="col-1 d-flex align-items-center">
+                                                    <a href="#" class="btn btn-outline-danger"><i
+                                                                class="fa fa-trash"></i></a>
+                                                </div>
+                                            </div>
+                                        <br>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                             <div class="cart-footer">
