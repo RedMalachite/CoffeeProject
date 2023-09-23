@@ -20,7 +20,7 @@ $content = dbSelect(Tables::Content, 'id, name', order: 'id');
                             <td><?= $block['id'] ?></td>
                             <td><?= $block['name'] ?></td>
                             <td>
-                                <a class="btn btn-outline-primary" href="admin/content/edit/<?= $block['id']; ?>"><i class="fa fa-edit"></i></a>
+                                <a class="btn btn-outline-primary" href="/admin/content/edit/<?= $block['id']; ?>"><i class="fa fa-edit"></i></a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
