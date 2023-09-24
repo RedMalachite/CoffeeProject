@@ -17,15 +17,14 @@ $socials = $commonBlocks['socials'] ?? [];
             <div class="col-lg-5 col-sm-5 foot-columns">
                 <p class="foot-titles"><?= $socials['form']['title'] ?? $empty ?></p>
                 <p><?= $socials['form']['description'] ?? $empty ?></p>
-                <form target="_blank" novalidate="true"
-                      action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                      method="get" class="form-inline">
-                    <div class="wide">
-                        <input class="search rounded-0" name="EMAIL" placeholder="Enter Email"
-                               onfocus="this.placeholder = ''"
-                               onblur="this.placeholder = 'Enter Email '" required="" type="email">
-                        <button class="search-button"><i class="arrow" aria-hidden="true">&#8702;</i>
-                        </button>
+                <form action="/" method="POST" class="w-100">
+                    <input type="hidden" name="type" value="new_subscriber">
+                    <div class="input-group mb-3">
+                        <label for="email"><?= $footer['form']['description'] ?? '' ?></label>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email" aria-describedby="button-addon2">
+                        <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><i class="fa fa-arrow-right"></i></button>
                     </div>
                 </form>
             </div>

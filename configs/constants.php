@@ -27,6 +27,7 @@ enum Tables: string{
     case Orders = 'orders';
     case Products = 'products';
     case OrderProducts = 'order_products';
+    case Newsletter = 'newsletter_subscribers';
 }
 enum SESSION_KEYS: string{
     case REGISTER = 'registration';
