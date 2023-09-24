@@ -29,15 +29,15 @@ include_once PARTS_DIR . 'notification.php';
                             <img src="<?= IMAGES_URI ?>/<?= $commonBlocks['navigation']['logo'] ?>" alt="Logo">
                         </a>
                     <?php endif; ?>
-
-                    <?php if ($commonBlocks['navigation']['links']): ?>
                         <ul class="nav nav-pills">
+                            <?php if ($commonBlocks['navigation']['links']): ?>
                             <?php foreach ($commonBlocks['navigation']['links'] as $link): ?>
                                 <li class="nav-item">
                                     <a href="<?= $link['href'] ?>" class="nav-link"
                                        aria-current="page"><?= $link['title'] ?></a>
                                 </li>
                             <?php endforeach; ?>
+                            <?php endif; ?>
                             <li class="nav-item">
                                 <a href="/cart" class="nav-link"
                                    aria-current="page"><i class="fa fa-shopping-cart"></i></a>
@@ -70,7 +70,6 @@ include_once PARTS_DIR . 'notification.php';
                                 </li>
                             <?php endif; ?>
                         </ul>
-                    <?php endif; ?>
                 </header>
             </div>
         </div>

@@ -27,3 +27,19 @@ function uploadContentImage(string $tmpName, string $path, int $id)
         redirectBack();
     }
 }
+
+function getContentQuery(): PDOStatement{
+    $sql = "UPDATE " . Tables::Content->value . " SET content = :content WHERE id = :id";
+    return DB::connect()->prepare($sql);
+
+}
+
+function executeContentQuery(PDOStatement $query, int $id): void
+{
+    if ($query->execute()) {
+notify("Block was updated");
+    } else {
+notify("Something goes wrong!", "danger");
+    }
+    redirect("/admin/content/edit/$id");
+}

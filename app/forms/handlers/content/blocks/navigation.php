@@ -9,7 +9,12 @@ function updateNavigationBlock(int $id, array $fields): void
         'logo' => uploadNavigationLogo($blockContent['logo'] ?? '', $id),
         'links' => array_values($links),
     ]);
-    dd($content, json_decode($content,true));
+//    dd($content, json_decode($content,true));
+    $query = getContentQuery();
+
+    $query->bindParam('content', $content);
+    $query->bindParam('id', $id, PDO::PARAM_INT);
+    executeContentQuery($query, $id);
 }
 
 function uploadNavigationLogo(string $image, int $id): string

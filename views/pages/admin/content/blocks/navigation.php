@@ -29,6 +29,8 @@ $fields = json_decode($block['content'], true);
                                 </div>
                                 <div class="mt-3">
                                     <h5>Nav links:</h5>
+                                    <?php $lastKey = array_key_last($fields['links']) ?? 0;
+                                    ?>
                                     <?php if (!empty($fields['links'])): ?>
                                         <?php
                                         foreach ($fields['links'] as $key => $link):
@@ -40,12 +42,14 @@ $fields = json_decode($block['content'], true);
                                                            class="form-control"
                                                            id="link-text_<?= $key ?>"
                                                            value="<?= $link['title'] ?>"
+                                                           name="links[<?= $key ?>][title]"
                                                     >
                                                     <label for="link_<?= $key ?>">Link</label>
                                                     <input type="text"
                                                            class="form-control"
                                                            id="link_<?= $key ?>"
                                                            value="<?= $link['href'] ?>"
+                                                           name="links[<?= $key ?>][href]"
                                                     >
                                                 </div>
                                                 <div class="col-1 d-flex align-items-center">
