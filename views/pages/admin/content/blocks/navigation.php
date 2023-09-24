@@ -1,7 +1,6 @@
 <?php
 require_once ADMIN_PARTS_DIR . '/header.php';
 $fields = json_decode($block['content'], true);
-//dd($fields);
 ?>
 
     <div class="container" style="padding-top: 10em;">
