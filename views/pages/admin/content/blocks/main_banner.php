@@ -4,7 +4,7 @@ $fields = json_decode($block['content'], true);
 //dd($fields);
 ?>
 
-    <div class="container" style="padding-top: 10em;">
+    <div class="container col-8" style="padding-top: 10em;">
         <div class="row">
             <div class="col-2"></div>
             <div class="col-8">
