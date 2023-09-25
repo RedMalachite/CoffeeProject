@@ -50,7 +50,7 @@ $fields = json_decode($block['content'], true);
                             </div>
                             <br>
                             <div class="mb-3">
-                                <label class="mb-2" for="subtitle_<?= $block['id'] ?>">Current title:
+                                <label class="mb-2" for="subtitle_<?= $block['id'] ?>">Current subtitle:
                                     "<?= $fields['subtitle'] ?>". Change to:</label>
                                 <input type="text"
                                        class="form-control"
