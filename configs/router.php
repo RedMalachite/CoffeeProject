@@ -35,13 +35,10 @@ switch (getUrl()) {
         conditionRedirect(!isAdmin());
         $id = end($match);
         $product = dbFind(Tables::Products, $id);
-
         if (empty($product)) {
             notify('404 - product not found', 'danger');
-//            redirectBack();
             redirect('/admin/products');
         }
-
         require ADMIN_PAGE_DIR . '/products/edit.php';
         break;
 
@@ -54,18 +51,16 @@ switch (getUrl()) {
         conditionRedirect(!isAdmin());
         $id = end($match);
         $block = dbFind(Tables::Content, $id);
-
         conditionRedirect(!$block, 'admin/content');
-
         $file = ADMIN_PAGE_DIR . "/content/blocks/$block[name].php";
+
+//        dd($file);
 
         if(!file_exists($file)){
             notify("[$block[name]] - 404. Can not find requested template!", 'warning');
             redirectBack();
         }
-
         require $file;
-
         break;
 
     case 'account':
@@ -75,24 +70,26 @@ switch (getUrl()) {
 
         require 'views/pages/account/dashboard.php';
         break;
+
     case 'account/orders':
         conditionRedirect(!isAuth());
         $userId = userIdInt();
         $orders = dbSelect(Tables::Orders, condition: "user_id = $userId");
         require 'views/pages/account/orders/index.php';
         break;
+    case 'admin/newsletter':
+        conditionRedirect(!isAdmin());
+        require_once ADMIN_PAGE_DIR . '/newsletter.php';
+        break;
+
+
     case (bool)preg_match('/account\/orders\/(\d+)/', getUrl(), $match):
         conditionRedirect(!isAuth());
-
         $id = end($match);
         $order = dbFind(Tables::Orders, $id);
-
         conditionRedirect(!$order, 'account/orders');
-
         $products = getOrderInfo($id);
-
         require 'views/pages/account/orders/show.php';
-
         break;
     default:
         throw new Exception(getUrl() . ' does not exists', 404);

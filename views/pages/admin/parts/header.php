@@ -44,10 +44,10 @@ include_once PARTS_DIR . 'notification.php';
                                 </ul>
                             </div>
                             <a href="/admin/content" style="color: white" class="nav-link">Content</a>
+                            <a href="/admin/newsletter" style="color: white" class="nav-link">Newsletter</a>
                             <a href="#" style="color: white" class="nav-link disabled">|</a>
                             <a href="/" style="color: white" class="nav-link">Back to Site</a>
                             <a href="/logout" style="color: white" class="nav-link">Log Out <?php
-                                //                                dd($_SESSION);
                                 if ($_SESSION['user']['isAdmin'] === true) echo ", Admin";
                                 ?></a>
                         </nav>

@@ -7,7 +7,7 @@ $content = dbSelect(Tables::Content, 'id, name', order: 'id');
         <div class="row">
             <div class="col-2"></div>
             <div class="col-8">
-                <h3>My Orders</h3>
+                <h3>Blocks for editing</h3>
                 <table class="table table-striped-columns">
                     <thead>
                     <th>#</th>
