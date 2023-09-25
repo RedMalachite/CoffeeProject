@@ -1,5 +1,4 @@
 <?php
-//dd('navigation');
 function updateNavigationBlock(int $id, array $fields): void
 {
     $block = dbFind(Tables::Content, $id);
@@ -27,9 +26,35 @@ function uploadNavigationLogo(string $image, int $id): string
 
         $oldFile = BASE_DIR . '/img/' . $image;
         if (file_exists($oldFile)) {
-        unlink($oldFile);
+            unlink($oldFile);
         }
         $image = $newImageName;
     }
     return $image;
+}
+
+function updateBannerContent(int $id, array $fields): void
+{
+
+    $currentBannerData = dbFind(Tables::Content, $id);
+    $currentBannerDataDecode = json_decode($currentBannerData['content'], true);
+
+    $content = json_encode([
+        'link' => [
+            'href' => $fields['link_to'],
+            'text' => $fields['button_text']
+        ],
+        'title' => $fields['title'],
+        'subtitle' => $fields['subtitle']
+    ]);
+
+//    dd($currentBannerData['content'], $content);
+
+    $query = getContentQuery();
+    $query->bindParam('content', $content);
+    $query->bindParam('id', $id, PDO::PARAM_INT);
+
+//    dd($fields, $currentBannerDataDecode);
+
+    executeContentQuery($query, $id);
 }

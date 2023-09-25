@@ -3,7 +3,7 @@ function editContent()
 {
 
     $fields = $_POST;
-    dd($fields);
+
     $name = filter_input(INPUT_POST, 'block_name');
 
     $id = filter_input(INPUT_POST, 'block_id', FILTER_VALIDATE_INT);
@@ -15,8 +15,10 @@ function editContent()
 
     conditionRedirect(!$id, '/admin/content');
     unset($fields['block_name'], $fields['block_id']);
+//    dd($id, $name, $fields);
     match ($name) {
         'navigation' => updateNavigationBlock($id, $fields),
+        'main_banner' => updateBannerContent($id, $fields),
         default => redirectBack()
     };
 }
