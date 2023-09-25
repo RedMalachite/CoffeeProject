@@ -3,6 +3,7 @@ function editContent()
 {
 
     $fields = $_POST;
+    dd($fields);
     $name = filter_input(INPUT_POST, 'block_name');
 
     $id = filter_input(INPUT_POST, 'block_id', FILTER_VALIDATE_INT);
